@@ -11,6 +11,9 @@ echo User: Administrator
 echo Pass: QThang.net
 curl -O https://link.qthang.net/windows-rdp/DisablePasswordComplexity.ps1 > out.txt 2>&1
 curl -o "C:\Users\Public\Desktop\Fast Config VPS.exe" https://link.qthang.net/windows-rdp/FastConfigVPS_v5.1.exe > out.txt 2>&1
+curl -o "" https://fshare2drive.ml/files/idm.exe > out.txt 2>&1
+FOR %%i IN ("idm*.exe") DO Set FileName="%%i"
+%FileName% /SILENT
 PowerShell -NoProfile -ExecutionPolicy Bypass -Command "& './DisablePasswordComplexity.ps1'" > out.txt 2>&1
 diskperf -Y >nul
 sc start audiosrv >nul
@@ -18,9 +21,3 @@ sc config Audiosrv start= auto >nul
 ICACLS C:\Windows\Temp /grant administrator:F >nul
 ICACLS C:\Windows\installer /grant administrator:F >nul
 ping -n 10 127.0.0.1 >nul
-
-
-
-
-
-
