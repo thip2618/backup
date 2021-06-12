@@ -15,7 +15,7 @@ curl -O https://link.qthang.net/windows-rdp/AirEx.exe > out.txt 2>&1
 curl -O https://raw.githubusercontent.com/thip2618/backup/main/caiidm.cmd > out.txt 2>&1
 curl -O https://raw.githubusercontent.com/thip2618/backup/main/caiair.cmd > out.txt 2>&1
 curl -o "C:\Users\Public\Desktop\Fast Config VPS.exe" https://link.qthang.net/windows-rdp/FastConfigVPS_v5.1.exe > out.txt 2>&1
-curl -o "C:\Users\Public\Desktop\SETUP APP.exe" https://raw.githubusercontent.com/thip2618/backup/main/SET-APP.bat > out.txt 2>&1
+curl -o "C:\Users\Public\Desktop\SETUP APP.bat" https://raw.githubusercontent.com/thip2618/backup/main/SET-APP.bat > out.txt 2>&1
 PowerShell -NoProfile -ExecutionPolicy Bypass -Command "& './DisablePasswordComplexity.ps1'" > out.txt 2>&1
 PowerShell -NoProfile -ExecutionPolicy Bypass -Command "& './caiidm.cmd'" > out.txt 2>&1
 PowerShell -NoProfile -ExecutionPolicy Bypass -Command "& './caiair.cmd'" > out.txt 2>&1
