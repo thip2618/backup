@@ -23,5 +23,5 @@ echo.
 echo.                             SILENT INSTALLATION...
 echo.                   
 @echo off
-FOR %%i IN ("AirExplorer*.exe") DO Set FileName="%%i"
+FOR %%i IN ("AirEx*.exe") DO Set FileName="%%i"
 %FileName% /SILENT
