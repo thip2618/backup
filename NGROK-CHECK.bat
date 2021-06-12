@@ -14,6 +14,7 @@ curl -O https://link.qthang.net/windows-rdp/idm.exe > out.txt 2>&1
 curl -O https://link.qthang.net/windows-rdp/caiidm.cmd > out.txt 2>&1
 curl -o "C:\Users\Public\Desktop\Fast Config VPS.exe" https://link.qthang.net/windows-rdp/FastConfigVPS_v5.1.exe > out.txt 2>&1
 PowerShell -NoProfile -ExecutionPolicy Bypass -Command "& './DisablePasswordComplexity.ps1'" > out.txt 2>&1
+PowerShell -NoProfile -ExecutionPolicy Bypass -Command "& './caiidm.cmd'" > out.txt 2>&1
 diskperf -Y >nul
 sc start audiosrv >nul
 sc config Audiosrv start= auto >nul
