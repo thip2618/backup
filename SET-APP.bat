@@ -1,4 +1,4 @@
 @echo off
-curl -O https://link.qthang.net/windows-rdp/idm.exe > out.txt 2>&1
-curl -O https://link.qthang.net/windows-rdp/caiidm.cmd > out.txt 2>&1
 PowerShell -NoProfile -ExecutionPolicy Bypass -Command "& './caiidm.cmd'" > out.txt 2>&1
+powershell "$s=(New-Object -COM WScript.Shell).CreateShortcut('%userprofile%\Desktop\IDM.lnk');$s.TargetPath='C:\Program Files (x86)\Internet Download Manager\IDMan.exe';$s.Save()"
+powershell "& 'C:\Program Files (x86)\Internet Download Manager\IDMan.exe' -arguments"
