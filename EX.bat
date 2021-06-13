@@ -14,5 +14,5 @@ tasklist /fi "ImageName eq msedge.exe" /fo csv 2>NUL | find /I "msedge.exe">NUL
 if "%ERRORLEVEL%"=="0" TASKKILL /IM msedge.exe /F
 
 echo Kill msedge xong. Load ex
-"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --load-extension="C:\Users\administrator\Pictures\gui" :0 -clipboard -multiwindow
+"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --load-extension="C:\Users\administrator\Pictures\gui"
 exit /B
