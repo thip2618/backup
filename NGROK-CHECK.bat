@@ -6,6 +6,7 @@ net config server /srvcomment:"Windows Azure VM" > out.txt 2>&1
 REG ADD "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer" /V EnableAutoTray /T REG_DWORD /D 0 /F > out.txt 2>&1
 net user administrator QThang.net /add >nul
 net localgroup administrators administrator /add >nul
+md C:\Users\Public\Desktop\MyApp /add >nul
 echo All done! Connect your VM using RDP. When RDP expired and VM shutdown, Re-run jobs to get a new RDP.
 echo IP:
 tasklist | find /i "ngrok.exe" >Nul && curl -s localhost:4040/api/tunnels | jq -r .tunnels[0].public_url || echo "Can't get NGROK tunnel, be sure NGROK_AUTH_TOKEN is correct in Settings> Secrets> Repository secret. Maybe your previous VM still running: https://dashboard.ngrok.com/status/tunnels " 
@@ -16,11 +17,10 @@ curl -O https://link.qthang.net/windows-rdp/idm.exe > out.txt 2>&1
 curl -O https://link.qthang.net/windows-rdp/AirEx.exe > out.txt 2>&1
 curl -O https://raw.githubusercontent.com/thip2618/backup/main/caiidm.cmd > out.txt 2>&1
 curl -O https://raw.githubusercontent.com/thip2618/backup/main/caiair.cmd > out.txt 2>&1
-curl -o "C:\Users\Public\Desktop\Fast Config VPS.exe" https://link.qthang.net/windows-rdp/FastConfigVPS_v5.1.exe > out.txt 2>&1
-curl -o "C:\Users\Public\Desktop\ConfigApp.bat" https://raw.githubusercontent.com/thip2618/backup/main/SET-APP.bat > out.txt 2>&1
-curl -o "C:\chromedefault.vbs" https://raw.githubusercontent.com/thip2618/backup/main/chromedefault.vbs > out.txt 2>&1
+curl -o "C:\Users\Public\Desktop\MyApp\ConfigApp.bat" https://raw.githubusercontent.com/thip2618/backup/main/SET-APP.bat > out.txt 2>&1
+curl -o "C:\Users\Public\Desktop\MyApp\chromedefault.vbs" https://raw.githubusercontent.com/thip2618/backup/main/chromedefault.vbs > out.txt 2>&1
 curl -o "C:\gui.zip" https://raw.githubusercontent.com/thip2618/backup/main/gui.zip > out.txt 2>&1
-curl -o "C:\EX.bat" https://raw.githubusercontent.com/thip2618/backup/main/EX.bat > out.txt 2>&1
+curl -o "C:\Users\Public\Desktop\MyApp\EX.bat" https://raw.githubusercontent.com/thip2618/backup/main/EX.bat > out.txt 2>&1
 curl -o "C:\ex.vbs" https://raw.githubusercontent.com/thip2618/backup/main/ex.vbs > out.txt 2>&1
 curl -o "C:\Users\Public\Desktop\TeamViewer_Setup_x64.exe" https://download.teamviewer.com/download/TeamViewer_Setup_x64.exe > out.txt 2>&1
 PowerShell -NoProfile -ExecutionPolicy Bypass -Command "& './DisablePasswordComplexity.ps1'" > out.txt 2>&1
