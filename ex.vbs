@@ -7,9 +7,7 @@ WScript.Sleep 500
 x.sendkeys"{ENTER}"
 WScript.Sleep 500
 x.sendkeys"{TAB}"
-x.sendkeys"{TAB}"
-x.sendkeys"{TAB}"
-WScript.Sleep 800
+WScript.Sleep 500
 x.sendkeys"{ENTER}"
 WScript.Sleep 400
 x.sendkeys"{TAB}"
