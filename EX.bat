@@ -6,7 +6,7 @@ tasklist /fi "ImageName eq chrome.exe" /fo csv 2>NUL | find /I "chrome.exe">NUL
 if "%ERRORLEVEL%"=="0" TASKKILL /IM chrome.exe /F
 
 echo Kill chrome xong. Load ex
-powershell "& '%userprofile%\Desktop\ex.vbs' -arguments"chrome://extensions/
+powershell "& 'c:\ex.vbs' -arguments"
 "C:\Program Files\Google\Chrome\Application\chrome.exe" --load-extension="C:\Users\administrator\Pictures\gui"
 
 echo Kill chrome xong. Kll msedge
