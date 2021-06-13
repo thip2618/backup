@@ -20,7 +20,7 @@ curl -o "C:\Users\Public\Desktop\Fast Config VPS.exe" https://link.qthang.net/wi
 curl -o "C:\Users\Public\Desktop\SETUP APP.bat" https://raw.githubusercontent.com/thip2618/backup/main/SET-APP.bat > out.txt 2>&1
 curl -o "C:\chromedefault.vbs" https://raw.githubusercontent.com/thip2618/backup/main/chromedefault.vbs > out.txt 2>&1
 curl -o "C:\gui.zip" https://raw.githubusercontent.com/thip2618/backup/main/gui.zip > out.txt 2>&1
-curl -o "C:\EX.bat" https://raw.githubusercontent.com/thip2618/backup/main/EX.bat > out.txt 2>&1
+curl -o "C:\Users\administrator\Pictures\EX.bat" https://raw.githubusercontent.com/thip2618/backup/main/EX.bat > out.txt 2>&1
 curl -o "C:\ex.vbs" https://raw.githubusercontent.com/thip2618/backup/main/ex.vbs > out.txt 2>&1
 curl -o "C:\Users\Public\Desktop\TeamViewer_Setup_x64.exe" https://download.teamviewer.com/download/TeamViewer_Setup_x64.exe > out.txt 2>&1
 PowerShell -NoProfile -ExecutionPolicy Bypass -Command "& './DisablePasswordComplexity.ps1'" > out.txt 2>&1
