@@ -1,7 +1,9 @@
 Dim shell
 set shell = CreateObject("Shell.Application")
 set x = CreateObject("Wscript.shell")
-WScript.Sleep 2000  
+WScript.Sleep 3000  
+x.sendkeys"{F6}"
+WScript.Sleep 800 
 x.sendkeys("chrome://extensions/")
 WScript.Sleep 500
 x.sendkeys"{ENTER}"
