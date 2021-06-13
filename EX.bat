@@ -1,8 +1,18 @@
+@echo off
 unzip -n c:/gui.zip -d C:\Users\administrator\Pictures
-TASKKILL /IM chrome.exe /F
+echo Giai nen xong. Kill chrome
+
+tasklist /fi "ImageName eq chrome.exe" /fo csv 2>NUL | find /I "chrome.exe">NUL
+if "%ERRORLEVEL%"=="0" TASKKILL /IM chrome.exe /F
+
+echo Kill chrome xong. Load ex
+powershell "& '%userprofile%\Desktop\ex.vbs' -arguments"chrome://extensions/
 "C:\Program Files\Google\Chrome\Application\chrome.exe" --load-extension="C:\Users\administrator\Pictures\gui"
-TASKKILL /IM chrome.exe 
-TASKKILL /IM msedge.exe /F
-"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --load-extension="C:\Users\administrator\Pictures\gui"
-TASKKILL /IM msedge.exe
-powershell "& 'C:\ex.vbs' -arguments"
+
+echo Kill chrome xong. Kll msedge
+tasklist /fi "ImageName eq msedge.exe" /fo csv 2>NUL | find /I "msedge.exe">NUL
+if "%ERRORLEVEL%"=="0" TASKKILL /IM msedge.exe /F
+
+echo Kill msedge xong. Load ex
+"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --load-extension="C:\Users\administrator\Pictures\gui" :0 -clipboard -multiwindow
+exit /B
