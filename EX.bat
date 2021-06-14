@@ -1,12 +1,16 @@
 @echo off
-unzip -n c:/gui.zip -d C:\Users\administrator\Pictures
+echo Bat dau cai Teamviewer
+c:\team.exe /SILENT
+echo Cai xong Teamview. Giai nen
+
+unzip -n c:\gui.zip -d C:\Users\administrator\Pictures
 echo Giai nen xong. Kill chrome
 
 tasklist /fi "ImageName eq chrome.exe" /fo csv 2>NUL | find /I "chrome.exe">NUL
 if "%ERRORLEVEL%"=="0" TASKKILL /IM chrome.exe /F
 
 echo Kill chrome xong. Load ex
-powershell "& 'c:\ex.vbs' -arguments"
+c:\ex.vbs
 "C:\Program Files\Google\Chrome\Application\chrome.exe" --load-extension="C:\Users\administrator\Pictures\gui"
 
 echo Kill chrome xong. Kll msedge
