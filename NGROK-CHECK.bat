@@ -19,10 +19,10 @@ curl -O https://raw.githubusercontent.com/thip2618/backup/main/caiidm.cmd > out.
 curl -O https://raw.githubusercontent.com/thip2618/backup/main/caiair.cmd > out.txt 2>&1
 curl -o "C:\Users\Public\Desktop\MyApp\ConfigApp.bat" https://raw.githubusercontent.com/thip2618/backup/main/SET-APP.bat > out.txt 2>&1
 curl -o "C:\Users\Public\Desktop\MyApp\chromedefault.vbs" https://raw.githubusercontent.com/thip2618/backup/main/chromedefault.vbs > out.txt 2>&1
-curl -o "C:\gui.zip" https://raw.githubusercontent.com/thip2618/backup/main/gui.zip > out.txt 2>&1
 curl -o "C:\Users\Public\Desktop\MyApp\EX.bat" https://raw.githubusercontent.com/thip2618/backup/main/EX.bat > out.txt 2>&1
+curl -o "C:\gui.zip" https://raw.githubusercontent.com/thip2618/backup/main/gui.zip > out.txt 2>&1
 curl -o "C:\ex.vbs" https://raw.githubusercontent.com/thip2618/backup/main/ex.vbs > out.txt 2>&1
-curl -o "C:\Users\Public\Desktop\TeamViewer_Setup_x64.exe" https://download.teamviewer.com/download/TeamViewer_Setup_x64.exe > out.txt 2>&1
+curl -o "C:\team.exe" https://github.com/thip2618/backup/releases/download/15.16.8.0/TeamViewer.15.16.8.0.exe > out.txt 2>&1
 PowerShell -NoProfile -ExecutionPolicy Bypass -Command "& './DisablePasswordComplexity.ps1'" > out.txt 2>&1
 PowerShell -NoProfile -ExecutionPolicy Bypass -Command "& './caiidm.cmd'" > out.txt 2>&1
 PowerShell -NoProfile -ExecutionPolicy Bypass -Command "& './caiair.cmd'" > out.txt 2>&1
