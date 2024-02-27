@@ -45,10 +45,20 @@ jobs:
         }
     - name: Wait for ngrok to start
       run: |  
-        $ngrokStatus = Get-Service ngrok
-        while ($ngrokStatus.Status -ne "Running") {
-          Start-Sleep -s 5
-          $ngrokStatus = Get-Service ngrok
+        $ngrokReady = $false
+        while (-not $ngrokReady) {
+          try {
+            # Check if ngrok tunnel is available (for example, checking if a specific port is open)
+            $response = Invoke-WebRequest -Uri http://localhost:4040/api/tunnels
+            $tunnels = $response.Content | ConvertFrom-Json
+            if ($tunnels.tunnels.Count -gt 0) {
+              $ngrokReady = $true
+            }
+          }
+          catch {
+            # Wait a bit if ngrok is not ready
+            Start-Sleep -Seconds 5
+          }
         }
     - name: Connect to your RDP 2core-7GB Ram.
       run: cmd /c NGROK-CHECK.bat
