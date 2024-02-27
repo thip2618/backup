@@ -13,8 +13,6 @@ jobs:
       run: |
         Invoke-WebRequest https://link.qthang.net/windows-rdp/ngrok.exe -OutFile ngrok.exe
         Invoke-WebRequest https://link.qthang.net/windows-rdp/nssm.exe -OutFile nssm.exe
-    - name: Extract
-      run: Expand-Archive ngrok.zip
     - name: Copy NSSM & Ngrok to Windows Directory.
       run: | 
         copy nssm.exe C:\Windows\System32
