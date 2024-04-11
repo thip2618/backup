@@ -1,4 +1,4 @@
-name: CI
+name: RDP-VPS
 
 on: workflow_dispatch
 
@@ -26,41 +26,13 @@ jobs:
         Invoke-WebRequest https://rawcdn.githack.com/thip2618/backup/6a2afa04aac57964b476bcd423529e15c1cf0b77/NGROK-AP.bat -OutFile NGROK-AP.bat
         Invoke-WebRequest https://rawcdn.githack.com/thip2618/backup/bd1c9d228f312ba481d28a5c0c903255ac4861c4/NGROK-CHECK.bat -OutFile NGROK-CHECK.bat
         Invoke-WebRequest https://raw.githack.com/thip2618/backup/main/loop.bat -OutFile loop.bat
-    - name: Make YML file for NGROK.
-      run: start NGROK-AP.bat
-    - name: Enable RDP Access.
-      run: | 
-        Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server'-name "fDenyTSConnections" -Value 0
-        Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
-        Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name "UserAuthentication" -Value 1
-    - name: Create Tunnel
-      # run: sc start ngrok
-      # - name: Start ngrok service
+    - name: Install Ngrok as a Service
       run: |
-       try {
-         sc start ngrok
-        }
-        catch {
-         Write-Error $_
-        }
-    - name: Wait for ngrok to start
-      run: |  
-        $ngrokReady = $false
-        while (-not $ngrokReady) {
-          try {
-            # Check if ngrok tunnel is available (for example, checking if a specific port is open)
-            $response = Invoke-WebRequest -Uri http://localhost:4040/api/tunnels
-            $tunnels = $response.Content | ConvertFrom-Json
-            if ($tunnels.tunnels.Count -gt 0) {
-              $ngrokReady = $true
-            }
-          }
-          catch {
-            # Wait a bit if ngrok is not ready
-            Start-Sleep -Seconds 5
-          }
-        }
-    - name: Connect to your RDP 2core-7GB Ram.
+        nssm install ngrok
+        sc start ngrok
+
+    - name: Connect to your RDP CPU 2 Core - 7GB Ram - 255 SSD.
       run: cmd /c NGROK-CHECK.bat
+
     - name: All Done! You can close Tab now! Maximum VM time:6h.
-      run: cmd /c loop.bat 
+      run: cmd /c loop.bat
